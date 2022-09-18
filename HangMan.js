@@ -9,15 +9,15 @@ function getTheWord() {
     return document.getElementById('pwd').value.toUpperCase();
 }
 
-function StartGame() {
-    Lives();
-    CreateAlphabet();
+function startGame() {
+    lives();
+    createAlphabet();
     document.getElementById("text").innerHTML = challenge;
     underlineWord();
 }
 
 //The status of lives in the game is updated.
-function Lives() {
+function lives() {
     if (lives >= 3) {
         document.getElementById('lives').innerText = 'Lives: ' + lives;
     } else if (lives <= 2 && lives > 0) {
@@ -42,7 +42,7 @@ function underlineWord() {
 }
 
 //The letters of the alphabet are created.
-function CreateAlphabet() {
+function createAlphabet() {
     for (let i = 1; i < 27; ++i) {
         let btns = lettersArray.shift();;
         let buttonsContainer = document.getElementById('btns');
