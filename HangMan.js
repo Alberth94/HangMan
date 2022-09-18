@@ -4,6 +4,7 @@ let lettersArray = letters.split("");
 let challenge = "I challenge you to guess the letters of the hidden word."
 let goodLetter = 0;
 
+//Takes the word entered from the keyboard and returns it.
 function getTheWord() {
     return document.getElementById('pwd').value.toUpperCase();
 }
@@ -15,6 +16,7 @@ function StartGame() {
     underlineWord();
 }
 
+//The status of lives in the game is updated.
 function Lives() {
     if (lives >= 3) {
         document.getElementById('lives').innerText = 'Lives: ' + lives;
@@ -26,6 +28,7 @@ function Lives() {
     }
 }
 
+//The hidden word formed by the underscore("_") character is created.
 function underlineWord() {
     let censoredText = document.getElementById("underline");
     for (let i = 0; i < getTheWord().length; ++i) {
@@ -38,6 +41,7 @@ function underlineWord() {
     }
 }
 
+//The letters of the alphabet are created.
 function CreateAlphabet() {
     for (let i = 1; i < 27; ++i) {
         let btns = lettersArray.shift();;
@@ -51,6 +55,7 @@ function CreateAlphabet() {
     }    
 }
 
+//It is checked whether the letter chosen by the player is in the entered word or not.
 function checkLetter(id) {
     let length = getTheWord().length;
     let noMatch = 0;
@@ -74,6 +79,7 @@ function checkLetter(id) {
     document.getElementById(id).remove();   
 }
 
+//Checking game status.
 function winOrLose() {
     if (lives > 0) {
        let win = "Congratulations, you guessed the word."
@@ -84,7 +90,6 @@ function winOrLose() {
         document.getElementById("WinOrLose").innerHTML = lose + "😀";
         document.getElementById("btns").remove();    
     }
-
 }
 
 function restartGame(){
