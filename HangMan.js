@@ -10,14 +10,14 @@ function getTheWord() {
 }
 
 function startGame() {
-    lives();
+    updatelives();
     createAlphabet();
     document.getElementById("text").innerHTML = challenge;
     underlineWord();
 }
 
 //The status of lives in the game is updated.
-function lives() {
+function updatelives() {
     if (lives >= 3) {
         document.getElementById('lives').innerText = 'Lives: ' + lives;
     } else if (lives <= 2 && lives > 0) {
@@ -71,7 +71,7 @@ function checkLetter(id) {
     }   
     if (noMatch == 0) {
         --lives;
-        Lives();
+         updatelives();
         if (lives == 0) {
             winOrLose();    
         }
