@@ -82,7 +82,7 @@ function checkLetter(id) {
 //Checking game status.
 function winOrLose() {
     if (lives > 0) {
-       let win = "Congratulations, you guessed the word."
+        let win = "Congratulations, you guessed the word."
         document.getElementById("WinOrLose").innerHTML = win + "😎";
         document.getElementById("btns").remove();   
     } else {
@@ -92,6 +92,6 @@ function winOrLose() {
     }
 }
 
-function restartGame(){
+function restartGame() {
     window.location.reload();
 } 
