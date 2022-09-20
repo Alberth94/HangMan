@@ -71,7 +71,7 @@ function checkLetter(id) {
     }   
     if (noMatch == 0) {
         --lives;
-         updatelives();
+        updatelives();
         if (lives == 0) {
             winOrLose();    
         }
